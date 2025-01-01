@@ -1,0 +1,62 @@
+.send:hover {
+    transform: scale(1.1);
+    transition: all 0.25s;
+}
+
+.transition {
+    opacity: 1 !important;
+    transform: translateX(10%) !important;
+    transition: all 0.5s !important;
+}
+
+#createroom,
+#joinroom,
+#leaveroom {
+    backdrop-filter: blur(5px);
+    z-index: 10;
+}
+
+.messageStyle{
+    width: max-content;
+    max-width: 100%;
+    border-radius: 0.5rem;
+    font-style: italic;
+    margin-bottom: 1.3rem;
+}
+#msgLeft {
+    margin: 0.75rem 0;
+    padding-right: 1rem;
+    background-color: #4a3875;
+    animation: animForLeft 0.1s linear;
+}
+
+#msgRight {
+    padding: 0.25rem 0.65rem;
+    background-color: #28872f;
+    justify-self: end;
+    animation: animForRight 0.1s linear;
+}
+
+@keyframes animForLeft {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes animForRight {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+#rooms li {
+    box-shadow: 1px 2px 2px white;
+}

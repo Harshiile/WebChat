@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - WebChat</title>
+    <link href="../partials/styles/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        * {
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="w-screen h-screen flex flex-col items-center relative overflow-hidden bg-black">
+    <%- include('../partials/components/navbar')%>
+        <%- include('./components/createroom')%>
+            <%- include('./components/joinroom')%>
+                <%- include('./components/leaveRoom')%>
+                    <%- include('./components/roomBtns')%>
+                        <main class="w-full h-[85vh] flex gap-x-6 px-4">
+                            <%- include('./components/rooms')%>
+                                <div
+                                    class="container border-2 border-white w-[85%] h-[95%] max-h-[95%] rounded-3xl flex flex-col items-center gap-4 mt-4">
+                                    <header
+                                        class="py-2 w-full border-b-2 border-white-700 h-16 rounded-t-3xl flex items-center justify-between gap-2 sm:gap-4">
+                                        <p id="roomName" class="pl-6 text-xs font-bold sm:text-lg">
+                                            <%= roomName %>
+                                        </p>
+                                        <img src="/chat/Assets/exit.svg" id="leaveroomBtn"
+                                            class="w-8 h-8 mr-6 cursor-pointer">
+                                    </header>
+                                    <div
+                                        class="messages w-full h-full max-h-full flex flex-col justify-end px-6 overflow-scroll">
+                                        <div id="messageCanvas" class="overflow-scroll w-5/6 mx-auto relative">
+                                        </div>
+                                    </div>
+                                    <form id="msgForm" class="flex justify-center w-full gap-4 items-start">
+                                        <input type="text" name="input" placeholder="Enter a Message ..."
+                                            class="input w-1/2 bg-transparent font-mono ring-1 ring-zinc-400 focus:ring-2 focus:ring-rose-400 outline-none duration-300 placeholder:text-white placeholder:opacity-50 rounded-full sm:py-2 px-3 pl-5 shadow-md focus:shadow-md focus:shadow-rose-400 mb-4 cursor-text"
+                                            autocomplete="off" />
+                                        <button type="submit" class="send w-7 sm:w-10">
+                                            <img src="/chat/Assets/send.svg" class="cursor-pointer">
+                                        </button>
+                                    </form>
+                                </div>
+                        </main>
+                        <script src="/socket.io/socket.io.js"></script>
+                        <script src="/chat/JS/script.js"></script>
+                        <script src="/chat/JS/roomCreation.js"></script>
+                        <script src="/chat/JS/roomTransition.js"></script>
+</body>
+
+</html>

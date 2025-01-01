@@ -1,0 +1,18 @@
+<section id="leaveroom"
+    class="w-max h-max flex flex-col gap-y-5 items-center justify-center border border-white-300 rounded-3xl py-4 px-16 absolute right-0 bottom-36 translate-x-[100%] transition-all duration-200 pr-32">
+    <div class="goToRightBtn absolute top-5 left-2 w-8">
+        <img src="/Assets/forward.svg" class="cursor-pointer">
+    </div>
+    <p class="font-bold text-md">Are you sure want to leave
+        <span id="roomName" class="font-bold text-xl">
+            <%= roomName %>
+        </span>
+    </p>
+    <p id="deleteerror" class="mb-16 text-red-600 ml-4"></p>
+    <div class="absolute bottom-4">
+        <button id="yesBtn" class="bg-red-500 px-6 py-2 rounded-xl cursor-pointer font-bold text-md sm:text-lg">
+            Yes</button>
+        <button id="noBtn"
+            class="bg-[#32aa34] px-6 py-2 rounded-xl cursor-pointer font-bold text-md sm:text-lg ml-5">No</button>
+    </div>
+</section>
