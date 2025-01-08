@@ -32,7 +32,7 @@ const createMessage = (nameText, msgText, avatar_of_sender, type) => {
     name.innerHTML = type == 'send' ? '' : `${nameText}`
     name.className = 'text-[0.85rem] pt-1 italic font-bold'
     avatarNameBox.className = 'flex items-center gap-x-2 pt-2 pl-2'
-    if (type != 'send') avatarNameBox.append(senderAvatar)
+    if (type != 'send' && nameText != 'WebChat') avatarNameBox.append(senderAvatar)
     avatarNameBox.append(name)
 
     // message text set
